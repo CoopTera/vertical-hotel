@@ -1,9 +1,9 @@
 
-[![Runboat](https://img.shields.io/badge/runboat-Try%20me-875A7B.png)](https://runboat.odoo-community.org/builds?repo=OCA/vertical-hotel&target_branch=17.0)
-[![Pre-commit Status](https://github.com/OCA/vertical-hotel/actions/workflows/pre-commit.yml/badge.svg?branch=17.0)](https://github.com/OCA/vertical-hotel/actions/workflows/pre-commit.yml?query=branch%3A17.0)
-[![Build Status](https://github.com/OCA/vertical-hotel/actions/workflows/test.yml/badge.svg?branch=17.0)](https://github.com/OCA/vertical-hotel/actions/workflows/test.yml?query=branch%3A17.0)
-[![codecov](https://codecov.io/gh/OCA/vertical-hotel/branch/17.0/graph/badge.svg)](https://codecov.io/gh/OCA/vertical-hotel)
-[![Translation Status](https://translation.odoo-community.org/widgets/vertical-hotel-17-0/-/svg-badge.svg)](https://translation.odoo-community.org/engage/vertical-hotel-17-0/?utm_source=widget)
+[![Runboat](https://img.shields.io/badge/runboat-Try%20me-875A7B.png)](https://runboat.odoo-community.org/builds?repo=OCA/vertical-hotel&target_branch=18.0)
+[![Pre-commit Status](https://github.com/OCA/vertical-hotel/actions/workflows/pre-commit.yml/badge.svg?branch=18.0)](https://github.com/OCA/vertical-hotel/actions/workflows/pre-commit.yml?query=branch%3A18.0)
+[![Build Status](https://github.com/OCA/vertical-hotel/actions/workflows/test.yml/badge.svg?branch=18.0)](https://github.com/OCA/vertical-hotel/actions/workflows/test.yml?query=branch%3A18.0)
+[![codecov](https://codecov.io/gh/OCA/vertical-hotel/branch/18.0/graph/badge.svg)](https://codecov.io/gh/OCA/vertical-hotel)
+[![Translation Status](https://translation.odoo-community.org/widgets/vertical-hotel-18-0/-/svg-badge.svg)](https://translation.odoo-community.org/engage/vertical-hotel-18-0/?utm_source=widget)
 
 <!-- /!\ do not modify above this line -->
 
@@ -21,12 +21,12 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[hotel](hotel/) | 17.0.1.0.0 |  | Hotel Management to Manage Folio and Hotel Configuration
-[hotel_housekeeping](hotel_housekeeping/) | 17.0.1.0.0 |  | Manages Housekeeping Activities and its Process
-[hotel_reservation](hotel_reservation/) | 17.0.1.0.0 |  | Manages Guest Reservation & displays Reservation Summary
-[hotel_restaurant](hotel_restaurant/) | 17.0.1.0.0 |  | Table booking facilities and Managing customers orders
-[report_hotel_reservation](report_hotel_reservation/) | 17.0.1.0.0 |  | Hotel Reservation Management - Reporting
-[report_hotel_restaurant](report_hotel_restaurant/) | 17.0.1.0.0 |  | Restaurant Management - Reporting
+[hotel](hotel/) | 18.0.1.0.0 |  | Gestión de Hoteles, Folios y Configuración
+[hotel_housekeeping](hotel_housekeeping/) | 18.0.1.0.0 |  | Gestión de Limpieza y Mantenimiento
+[hotel_reservation](hotel_reservation/) | 18.0.1.0.0 |  | Gestión de Reservas y Calendario de Disponibilidad
+[hotel_restaurant](hotel_restaurant/) | 18.0.1.0.0 |  | Gestión de Restaurantes y Pedidos
+[report_hotel_reservation](report_hotel_reservation/) | 18.0.1.0.0 |  | Reportes de Reservas de Hotel
+[report_hotel_restaurant](report_hotel_restaurant/) | 18.0.1.0.0 |  | Reportes de Restaurante
 
 [//]: # (end addons)
 
