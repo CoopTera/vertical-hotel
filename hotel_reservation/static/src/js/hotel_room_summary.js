@@ -1,12 +1,12 @@
 /* @odoo-module */
 
-import {TextField} from "@web/views/fields/text/text_field";
-import {registry} from "@web/core/registry";
-import {useService} from "@web/core/utils/hooks";
-import {useState} from "@odoo/owl";
-var FormView = require("web.FormView"); // eslint-disable-line no-undef
+import { TextField } from "@web/views/fields/text/text_field";
+import { registry } from "@web/core/registry";
+import { useService } from "@web/core/utils/hooks";
+import { useState } from "@odoo/owl";
+
 var py = window.py;
-const {onWillUpdateProps} = owl;
+const { onWillUpdateProps } = owl;
 
 export class MyWidget extends TextField {
     setup() {
@@ -23,7 +23,7 @@ export class MyWidget extends TextField {
         onWillUpdateProps(() => {
             this.state.summary_header = py.eval(this.props.record.data.summary_header);
             this.state.room_summary = py.eval(this.props.record.data.room_summary);
-            console.log(FormView.ReinitializeWidgetMixin);
+
         });
     }
     resize() {
@@ -45,6 +45,6 @@ export class MyWidget extends TextField {
 }
 
 MyWidget.template = "RoomSummary";
-MyWidget.components = {...TextField.components};
+MyWidget.components = { ...TextField.components };
 MyWidget.additionalClasses = [...(TextField.additionalClasses || []), "o_field_text"];
 registry.category("fields").add("Room_Reservation", MyWidget);
