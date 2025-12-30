@@ -265,7 +265,7 @@ msgstr "Tipo de Servicio"
 #. module: hotel
 #: model:ir.ui.menu,name:hotel.menu_action_hotel_room_amenities_type_view_form
 msgid "Amenity Types"
-msgstr "Tipo de comodidades"
+msgstr "Tipo de Equipamiento"
 
 #. module: hotel
 #: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_form
@@ -1329,7 +1329,7 @@ msgstr "Servicios de habitaciones del hotel"
 #. module: hotel
 #: model_terms:ir.ui.view,arch_db:hotel.view_hotel_room_amenities_type_form
 msgid "Hotel Room Amenities Type"
-msgstr "Tipo de comodidades de las habitaciones del hotel"
+msgstr "Tipo de Equipamiento de las habitaciones del hotel"
 
 #. module: hotel
 #: model:ir.model,name:hotel.model_folio_room_line
@@ -3706,7 +3706,7 @@ msgstr ""
 #. module: hotel
 #: model:ir.model,name:hotel.model_hotel_room_amenities_type
 msgid "amenities Type"
-msgstr "Tipo de comodidades"
+msgstr "Tipo de Equipamiento"
 
 #. module: hotel
 #: model:ir.model,name:hotel.model_hotel_service_line
