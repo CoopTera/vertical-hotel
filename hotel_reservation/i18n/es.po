@@ -371,7 +371,7 @@ msgstr "Adultos"
 #: code:addons/hotel_reservation/models/hotel_reservation.py:0
 #, python-format
 msgid "Adults must be more than 0"
-msgstr ""
+msgstr "Los adultos deben ser más de 0"
 
 #. module: hotel_reservation
 #: model:ir.model,name:hotel_reservation.model_hotel_reservation_wizard
@@ -418,6 +418,9 @@ msgid ""
 " You have to select a Check in date or a Check out  date in the reservation "
 "form."
 msgstr ""
+"Antes de seleccionar una habitación,\n"
+" Debe seleccionar una fecha de Entrada o una fecha de Salida en el formulario de "
+"reserva."
 
 #. module: hotel_reservation
 #: model:ir.model.fields.selection,name:hotel_reservation.selection__hotel_reservation__state__cancel
@@ -462,13 +465,13 @@ msgstr "Fecha de salida"
 #: code:addons/hotel_reservation/models/hotel_reservation.py:0
 #, python-format
 msgid "Check-in date should be greater than the current date."
-msgstr ""
+msgstr "La fecha de entrada debe ser mayor a la actual."
 
 #. module: hotel_reservation
 #: code:addons/hotel_reservation/models/hotel_reservation.py:0
 #, python-format
 msgid "Check-out date should be greater than Check-in date."
-msgstr ""
+msgstr "La fecha de salida debe ser mayor a la fecha de entrada."
 
 #. module: hotel_reservation
 #: model:ir.actions.report,name:hotel_reservation.hotel_checkin_details
@@ -496,7 +499,7 @@ msgstr "Lista de salidas"
 #: code:addons/hotel_reservation/models/hotel_room.py:0
 #, python-format
 msgid "Checkout date should be greater than Checkin date."
-msgstr ""
+msgstr "La fecha de salida debe ser mayor a la fecha de entrada."
 
 #. module: hotel_reservation
 #: model:ir.model.fields,field_description:hotel_reservation.field_hotel_reservation__children
