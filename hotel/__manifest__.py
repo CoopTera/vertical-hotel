@@ -29,6 +29,7 @@
         "views/actions.xml",
         "views/menus.xml",
         "wizard/hotel_wizard.xml",
+        "data/hotel_demo_data.xml",
     ],
     "assets": {
         "web.assets_backend": ["hotel/static/src/css/room_kanban.css"],

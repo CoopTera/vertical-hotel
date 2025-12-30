@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Room Types -->
+        <record id="hotel_room_type_standard" model="hotel.room.type">
+            <field name="name">Estándar</field>
+        </record>
+        <record id="hotel_room_type_deluxe" model="hotel.room.type">
+            <field name="name">Deluxe</field>
+        </record>
+        <record id="hotel_room_type_suite" model="hotel.room.type">
+            <field name="name">Suite</field>
+        </record>
+
+        <!-- Amenities Types -->
+        <record id="hotel_room_amenities_type_bathroom" model="hotel.room.amenities.type">
+            <field name="name">Baño</field>
+        </record>
+        <record id="hotel_room_amenities_type_entertainment" model="hotel.room.amenities.type">
+            <field name="name">Entretenimiento</field>
+        </record>
+        <record id="hotel_room_amenities_type_comfort" model="hotel.room.amenities.type">
+            <field name="name">Confort</field>
+        </record>
+
+        <!-- Amenities (Product) -->
+        <!-- Adding base_unit_count="1.0" to satisfy Odoo 18 constraint -->
+        <record id="hotel_room_amenities_wifi" model="hotel.room.amenities">
+            <field name="name">WiFi Gratis</field>
+            <field name="amenities_categ_id" ref="hotel_room_amenities_type_entertainment"/>
+            <field name="list_price">0.0</field>
+            <field name="base_unit_count">1.0</field>
+            <field name="type">service</field>
+        </record>
+        <record id="hotel_room_amenities_tv" model="hotel.room.amenities">
+            <field name="name">TV LED 42"</field>
+            <field name="amenities_categ_id" ref="hotel_room_amenities_type_entertainment"/>
+            <field name="list_price">0.0</field>
+            <field name="base_unit_count">1.0</field>
+             <field name="type">service</field>
+        </record>
+        <record id="hotel_room_amenities_ac" model="hotel.room.amenities">
+            <field name="name">Aire Acondicionado</field>
+            <field name="amenities_categ_id" ref="hotel_room_amenities_type_comfort"/>
+            <field name="list_price">0.0</field>
+            <field name="base_unit_count">1.0</field>
+             <field name="type">service</field>
+        </record>
+        <record id="hotel_room_amenities_minibar" model="hotel.room.amenities">
+            <field name="name">Minibar</field>
+            <field name="amenities_categ_id" ref="hotel_room_amenities_type_comfort"/>
+            <field name="list_price">0.0</field>
+            <field name="base_unit_count">1.0</field>
+             <field name="type">service</field>
+        </record>
+        <record id="hotel_room_amenities_shower" model="hotel.room.amenities">
+            <field name="name">Ducha</field>
+            <field name="amenities_categ_id" ref="hotel_room_amenities_type_bathroom"/>
+            <field name="list_price">0.0</field>
+            <field name="base_unit_count">1.0</field>
+             <field name="type">service</field>
+        </record>
+        <record id="hotel_room_amenities_bathtub" model="hotel.room.amenities">
+            <field name="name">Bañera</field>
+            <field name="amenities_categ_id" ref="hotel_room_amenities_type_bathroom"/>
+            <field name="list_price">0.0</field>
+            <field name="base_unit_count">1.0</field>
+             <field name="type">service</field>
+        </record>
+
+        <!-- Rooms (Product) -->
+        <record id="hotel_room_101" model="hotel.room">
+            <field name="name">Habitación 101</field>
+            <field name="room_categ_id" ref="hotel_room_type_standard"/>
+            <field name="list_price">1500.0</field>
+            <field name="max_adult">2</field>
+            <field name="max_child">1</field>
+            <field name="isroom">True</field>
+            <field name="type">service</field>
+            <field name="base_unit_count">1.0</field>
+            <field name="room_amenities" eval="[(6, 0, [ref('hotel_room_amenities_wifi'), ref('hotel_room_amenities_tv'), ref('hotel_room_amenities_ac'), ref('hotel_room_amenities_shower')])]"/>
+        </record>
+        <record id="hotel_room_102" model="hotel.room">
+            <field name="name">Habitación 102</field>
+            <field name="room_categ_id" ref="hotel_room_type_standard"/>
+            <field name="list_price">1500.0</field>
+            <field name="max_adult">2</field>
+            <field name="max_child">1</field>
+            <field name="isroom">True</field>
+            <field name="type">service</field>
+            <field name="base_unit_count">1.0</field>
+            <field name="room_amenities" eval="[(6, 0, [ref('hotel_room_amenities_wifi'), ref('hotel_room_amenities_tv'), ref('hotel_room_amenities_ac'), ref('hotel_room_amenities_shower')])]"/>
+        </record>
+        <record id="hotel_room_201" model="hotel.room">
+            <field name="name">Habitación 201 Deluxe</field>
+            <field name="room_categ_id" ref="hotel_room_type_deluxe"/>
+            <field name="list_price">2500.0</field>
+            <field name="max_adult">2</field>
+            <field name="max_child">2</field>
+            <field name="isroom">True</field>
+            <field name="type">service</field>
+            <field name="base_unit_count">1.0</field>
+            <field name="room_amenities" eval="[(6, 0, [ref('hotel_room_amenities_wifi'), ref('hotel_room_amenities_tv'), ref('hotel_room_amenities_ac'), ref('hotel_room_amenities_minibar'), ref('hotel_room_amenities_bathtub')])]"/>
+        </record>
+        <record id="hotel_room_301" model="hotel.room">
+            <field name="name">Suite 301</field>
+            <field name="room_categ_id" ref="hotel_room_type_suite"/>
+            <field name="list_price">4000.0</field>
+            <field name="max_adult">4</field>
+            <field name="max_child">2</field>
+            <field name="isroom">True</field>
+            <field name="type">service</field>
+            <field name="base_unit_count">1.0</field>
+            <field name="room_amenities" eval="[(6, 0, [ref('hotel_room_amenities_wifi'), ref('hotel_room_amenities_tv'), ref('hotel_room_amenities_ac'), ref('hotel_room_amenities_minibar'), ref('hotel_room_amenities_bathtub')])]"/>
+        </record>
+
+        <!-- Service Types -->
+        <record id="hotel_service_type_spa" model="hotel.service.type">
+            <field name="name">Spa y Bienestar</field>
+        </record>
+        <record id="hotel_service_type_laundry" model="hotel.service.type">
+            <field name="name">Lavandería</field>
+        </record>
+        <record id="hotel_service_type_transport" model="hotel.service.type">
+            <field name="name">Transporte</field>
+        </record>
+
+        <!-- Services (Product) -->
+        <record id="hotel_service_massage" model="hotel.services">
+            <field name="name">Masaje Relajante</field>
+            <field name="service_categ_id" ref="hotel_service_type_spa"/>
+            <field name="list_price">800.0</field>
+            <field name="type">service</field>
+            <field name="isservice">True</field>
+            <field name="base_unit_count">1.0</field>
+        </record>
+        <record id="hotel_service_laundry" model="hotel.services">
+            <field name="name">Servicio de Lavandería</field>
+            <field name="service_categ_id" ref="hotel_service_type_laundry"/>
+            <field name="list_price">300.0</field>
+            <field name="type">service</field>
+            <field name="isservice">True</field>
+            <field name="base_unit_count">1.0</field>
+        </record>
+        <record id="hotel_service_transfer" model="hotel.services">
+            <field name="name">Traslado Aeropuerto</field>
+            <field name="service_categ_id" ref="hotel_service_type_transport"/>
+            <field name="list_price">500.0</field>
+            <field name="type">service</field>
+            <field name="isservice">True</field>
+            <field name="base_unit_count">1.0</field>
+        </record>
+
+    </data>
+</odoo>
