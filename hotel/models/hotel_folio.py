@@ -298,6 +298,19 @@ class HotelFolioLine(models.Model):
     checkin_date = fields.Datetime("Check In", required=True)
     checkout_date = fields.Datetime("Check Out", required=True)
     is_reserved = fields.Boolean(help="True when folio line created from Reservation")
+    
+    # Explicitly expose delegated fields
+    product_id = fields.Many2one(related='order_line_id.product_id', string="Product", readonly=False)
+    product_uom = fields.Many2one(related='order_line_id.product_uom', string="Unit of Measure", readonly=False)
+    product_uom_qty = fields.Float(related='order_line_id.product_uom_qty', string="Quantity", readonly=False)
+    price_unit = fields.Float(related='order_line_id.price_unit', string="Unit Price", readonly=False)
+    tax_id = fields.Many2many(related='order_line_id.tax_id', string="Taxes", readonly=False)
+    discount = fields.Float(related='order_line_id.discount', string="Discount", readonly=False)
+    price_subtotal = fields.Monetary(related='order_line_id.price_subtotal', string="Subtotal", readonly=True)
+    price_total = fields.Monetary(related='order_line_id.price_total', string="Total", readonly=True)
+    currency_id = fields.Many2one(related='order_line_id.currency_id', string="Currency", readonly=True)
+    amount_tax = fields.Float(related='order_line_id.price_tax', string="Tax Amount", readonly=True)
+
 
     @api.model
     def create(self, vals):
@@ -593,7 +606,21 @@ class HotelServiceLine(models.Model):
     )
     folio_id = fields.Many2one("hotel.folio", "Folio", ondelete="cascade")
     ser_checkin_date = fields.Datetime("From Date")
+    ser_checkin_date = fields.Datetime("From Date")
     ser_checkout_date = fields.Datetime("To Date")
+
+    # Explicitly expose delegated fields
+    product_id = fields.Many2one(related='service_line_id.product_id', string="Product", readonly=False)
+    product_uom = fields.Many2one(related='service_line_id.product_uom', string="Unit of Measure", readonly=False)
+    product_uom_qty = fields.Float(related='service_line_id.product_uom_qty', string="Quantity", readonly=False)
+    price_unit = fields.Float(related='service_line_id.price_unit', string="Unit Price", readonly=False)
+    tax_id = fields.Many2many(related='service_line_id.tax_id', string="Taxes", readonly=False)
+    discount = fields.Float(related='service_line_id.discount', string="Discount", readonly=False)
+    price_subtotal = fields.Monetary(related='service_line_id.price_subtotal', string="Subtotal", readonly=True)
+    price_total = fields.Monetary(related='service_line_id.price_total', string="Total", readonly=True)
+    currency_id = fields.Many2one(related='service_line_id.currency_id', string="Currency", readonly=True)
+    amount_tax = fields.Float(related='service_line_id.price_tax', string="Tax Amount", readonly=True)
+
 
     @api.model
     def create(self, vals):

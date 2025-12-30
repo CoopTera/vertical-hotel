@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Categorías de Productos para Habitaciones -->
+        <record id="product_category_hotel_room" model="product.category">
+            <field name="name">Habitaciones de Hotel</field>
+        </record>
+
+        <!-- Tipos de Habitación -->
+        <record id="hotel_room_type_standard" model="hotel.room.type">
+            <field name="name">Estándar</field>
+            <field name="categ_id" ref="product_category_hotel_room"/>
+        </record>
+
+        <record id="hotel_room_type_deluxe" model="hotel.room.type">
+            <field name="name">Deluxe</field>
+            <field name="categ_id" ref="product_category_hotel_room"/>
+        </record>
+
+        <record id="hotel_room_type_suite" model="hotel.room.type">
+            <field name="name">Suite</field>
+            <field name="categ_id" ref="product_category_hotel_room"/>
+        </record>
+
+        <!-- Tipos de Comodidades -->
+        <record id="hotel_amenities_type_bathroom" model="hotel.amenities.type">
+            <field name="name">Baño</field>
+        </record>
+
+        <record id="hotel_amenities_type_entertainment" model="hotel.amenities.type">
+            <field name="name">Entretenimiento</field>
+        </record>
+
+        <record id="hotel_amenities_type_comfort" model="hotel.amenities.type">
+            <field name="name">Confort</field>
+        </record>
+
+        <!-- Comodidades -->
+        <record id="hotel_amenities_wifi" model="hotel.amenities">
+            <field name="name">WiFi Gratis</field>
+            <field name="amenities_type_id" ref="hotel_amenities_type_entertainment"/>
+        </record>
+
+        <record id="hotel_amenities_tv" model="hotel.amenities">
+            <field name="name">TV LED 42"</field>
+            <field name="amenities_type_id" ref="hotel_amenities_type_entertainment"/>
+        </record>
+
+        <record id="hotel_amenities_ac" model="hotel.amenities">
+            <field name="name">Aire Acondicionado</field>
+            <field name="amenities_type_id" ref="hotel_amenities_type_comfort"/>
+        </record>
+
+        <record id="hotel_amenities_minibar" model="hotel.amenities">
+            <field name="name">Minibar</field>
+            <field name="amenities_type_id" ref="hotel_amenities_type_comfort"/>
+        </record>
+
+        <record id="hotel_amenities_shower" model="hotel.amenities">
+            <field name="name">Ducha</field>
+            <field name="amenities_type_id" ref="hotel_amenities_type_bathroom"/>
+        </record>
+
+        <record id="hotel_amenities_bathtub" model="hotel.amenities">
+            <field name="name">Bañera</field>
+            <field name="amenities_type_id" ref="hotel_amenities_type_bathroom"/>
+        </record>
+
+        <!-- Productos de Habitación -->
+        <record id="hotel_room_product_101" model="product.product">
+            <field name="name">Habitación 101</field>
+            <field name="categ_id" ref="product_category_hotel_room"/>
+            <field name="type">service</field>
+            <field name="list_price">1500.00</field>
+            <field name="isroom">True</field>
+        </record>
+
+        <record id="hotel_room_product_102" model="product.product">
+            <field name="name">Habitación 102</field>
+            <field name="categ_id" ref="product_category_hotel_room"/>
+            <field name="type">service</field>
+            <field name="list_price">1500.00</field>
+            <field name="isroom">True</field>
+        </record>
+
+        <record id="hotel_room_product_201" model="product.product">
+            <field name="name">Habitación 201 Deluxe</field>
+            <field name="categ_id" ref="product_category_hotel_room"/>
+            <field name="type">service</field>
+            <field name="list_price">2500.00</field>
+            <field name="isroom">True</field>
+        </record>
+
+        <record id="hotel_room_product_301" model="product.product">
+            <field name="name">Suite 301</field>
+            <field name="categ_id" ref="product_category_hotel_room"/>
+            <field name="type">service</field>
+            <field name="list_price">4000.00</field>
+            <field name="isroom">True</field>
+        </record>
+
+        <!-- Habitaciones -->
+        <record id="hotel_room_101" model="hotel.room">
+            <field name="product_id" ref="hotel_room_product_101"/>
+            <field name="room_amenities" eval="[(6, 0, [ref('hotel_amenities_wifi'), ref('hotel_amenities_tv'), ref('hotel_amenities_ac'), ref('hotel_amenities_shower')])]"/>
+            <field name="room_categ_id" ref="hotel_room_type_standard"/>
+            <field name="max_adult">2</field>
+            <field name="max_child">1</field>
+        </record>
+
+        <record id="hotel_room_102" model="hotel.room">
+            <field name="product_id" ref="hotel_room_product_102"/>
+            <field name="room_amenities" eval="[(6, 0, [ref('hotel_amenities_wifi'), ref('hotel_amenities_tv'), ref('hotel_amenities_ac'), ref('hotel_amenities_shower')])]"/>
+            <field name="room_categ_id" ref="hotel_room_type_standard"/>
+            <field name="max_adult">2</field>
+            <field name="max_child">1</field>
+        </record>
+
+        <record id="hotel_room_201" model="hotel.room">
+            <field name="product_id" ref="hotel_room_product_201"/>
+            <field name="room_amenities" eval="[(6, 0, [ref('hotel_amenities_wifi'), ref('hotel_amenities_tv'), ref('hotel_amenities_ac'), ref('hotel_amenities_minibar'), ref('hotel_amenities_bathtub')])]"/>
+            <field name="room_categ_id" ref="hotel_room_type_deluxe"/>
+            <field name="max_adult">2</field>
+            <field name="max_child">2</field>
+        </record>
+
+        <record id="hotel_room_301" model="hotel.room">
+            <field name="product_id" ref="hotel_room_product_301"/>
+            <field name="room_amenities" eval="[(6, 0, [ref('hotel_amenities_wifi'), ref('hotel_amenities_tv'), ref('hotel_amenities_ac'), ref('hotel_amenities_minibar'), ref('hotel_amenities_bathtub')])]"/>
+            <field name="room_categ_id" ref="hotel_room_type_suite"/>
+            <field name="max_adult">4</field>
+            <field name="max_child">2</field>
+        </record>
+
+        <!-- Categoría de Servicios -->
+        <record id="product_category_hotel_service" model="product.category">
+            <field name="name">Servicios de Hotel</field>
+        </record>
+
+        <!-- Tipos de Servicio -->
+        <record id="hotel_service_type_spa" model="hotel.service.type">
+            <field name="name">Spa y Bienestar</field>
+            <field name="product_categ_id" ref="product_category_hotel_service"/>
+        </record>
+
+        <record id="hotel_service_type_laundry" model="hotel.service.type">
+            <field name="name">Lavandería</field>
+            <field name="product_categ_id" ref="product_category_hotel_service"/>
+        </record>
+
+        <record id="hotel_service_type_transport" model="hotel.service.type">
+            <field name="name">Transporte</field>
+            <field name="product_categ_id" ref="product_category_hotel_service"/>
+        </record>
+
+        <!-- Productos de Servicio -->
+        <record id="hotel_service_product_massage" model="product.product">
+            <field name="name">Masaje Relajante</field>
+            <field name="categ_id" ref="product_category_hotel_service"/>
+            <field name="type">service</field>
+            <field name="list_price">800.00</field>
+            <field name="isservice">True</field>
+        </record>
+
+        <record id="hotel_service_product_laundry" model="product.product">
+            <field name="name">Servicio de Lavandería</field>
+            <field name="categ_id" ref="product_category_hotel_service"/>
+            <field name="type">service</field>
+            <field name="list_price">300.00</field>
+            <field name="isservice">True</field>
+        </record>
+
+        <record id="hotel_service_product_airport" model="product.product">
+            <field name="name">Traslado Aeropuerto</field>
+            <field name="categ_id" ref="product_category_hotel_service"/>
+            <field name="type">service</field>
+            <field name="list_price">500.00</field>
+            <field name="isservice">True</field>
+        </record>
+
+        <!-- Servicios -->
+        <record id="hotel_service_massage" model="hotel.services">
+            <field name="product_id" ref="hotel_service_product_massage"/>
+            <field name="service_categ_id" ref="hotel_service_type_spa"/>
+        </record>
+
+        <record id="hotel_service_laundry" model="hotel.services">
+            <field name="product_id" ref="hotel_service_product_laundry"/>
+            <field name="service_categ_id" ref="hotel_service_type_laundry"/>
+        </record>
+
+        <record id="hotel_service_airport" model="hotel.services">
+            <field name="product_id" ref="hotel_service_product_airport"/>
+            <field name="service_categ_id" ref="hotel_service_type_transport"/>
+        </record>
+
+        <!-- Categoría de Alimentos -->
+        <record id="product_category_food" model="product.category">
+            <field name="name">Alimentos y Bebidas</field>
+        </record>
+
+        <!-- Tipos de Productos Alimenticios -->
+        <record id="product_category_food_breakfast" model="product.category">
+            <field name="name">Desayuno</field>
+            <field name="parent_id" ref="product_category_food"/>
+        </record>
+
+        <record id="product_category_food_lunch" model="product.category">
+            <field name="name">Almuerzo</field>
+            <field name="parent_id" ref="product_category_food"/>
+        </record>
+
+        <record id="product_category_food_dinner" model="product.category">
+            <field name="name">Cena</field>
+            <field name="parent_id" ref="product_category_food"/>
+        </record>
+
+        <record id="product_category_food_beverages" model="product.category">
+            <field name="name">Bebidas</field>
+            <field name="parent_id" ref="product_category_food"/>
+        </record>
+
+        <!-- Productos Alimenticios -->
+        <record id="product_food_continental_breakfast" model="product.product">
+            <field name="name">Desayuno Continental</field>
+            <field name="categ_id" ref="product_category_food_breakfast"/>
+            <field name="type">consu</field>
+            <field name="list_price">450.00</field>
+        </record>
+
+        <record id="product_food_american_breakfast" model="product.product">
+            <field name="name">Desayuno Americano</field>
+            <field name="categ_id" ref="product_category_food_breakfast"/>
+            <field name="type">consu</field>
+            <field name="list_price">650.00</field>
+        </record>
+
+        <record id="product_food_lunch_menu" model="product.product">
+            <field name="name">Menú del Día</field>
+            <field name="categ_id" ref="product_category_food_lunch"/>
+            <field name="type">consu</field>
+            <field name="list_price">850.00</field>
+        </record>
+
+        <record id="product_food_dinner_special" model="product.product">
+            <field name="name">Cena Especial</field>
+            <field name="categ_id" ref="product_category_food_dinner"/>
+            <field name="type">consu</field>
+            <field name="list_price">1200.00</field>
+        </record>
+
+        <record id="product_food_wine" model="product.product">
+            <field name="name">Vino de la Casa</field>
+            <field name="categ_id" ref="product_category_food_beverages"/>
+            <field name="type">consu</field>
+            <field name="list_price">600.00</field>
+        </record>
+
+        <record id="product_food_juice" model="product.product">
+            <field name="name">Jugo Natural</field>
+            <field name="categ_id" ref="product_category_food_beverages"/>
+            <field name="type">consu</field>
+            <field name="list_price">200.00</field>
+        </record>
+    </data>
+</odoo>
