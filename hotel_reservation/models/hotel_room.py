@@ -15,6 +15,7 @@ try:
     import pytz
 except (OSError, ImportError) as err:
     _logger.debug(err)
+import json
 
 
 class HotelRoom(models.Model):
@@ -287,6 +288,6 @@ class RoomReservationSummary(models.Model):
                 room_detail.update({"value": room_list_stats})
                 all_room_detail.append(room_detail)
             main_header.append({"header": summary_header_list})
-            self.summary_header = str(main_header)
-            self.room_summary = str(all_room_detail)
+            self.summary_header = json.dumps(main_header)
+            self.room_summary = json.dumps(all_room_detail)
         return res

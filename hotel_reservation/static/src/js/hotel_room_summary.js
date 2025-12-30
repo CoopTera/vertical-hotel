@@ -5,7 +5,7 @@ import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 import { useState } from "@odoo/owl";
 
-var py = window.py;
+
 const { onWillUpdateProps } = owl;
 
 export class MyWidget extends TextField {
@@ -16,13 +16,13 @@ export class MyWidget extends TextField {
         this.state = useState({
             date_to: false,
             date_from: false,
-            summary_header: py.eval(this.props.record.data.summary_header),
-            room_summary: py.eval(this.props.record.data.room_summary),
+            summary_header: JSON.parse(this.props.record.data.summary_header),
+            room_summary: JSON.parse(this.props.record.data.room_summary),
         });
 
         onWillUpdateProps(() => {
-            this.state.summary_header = py.eval(this.props.record.data.summary_header);
-            this.state.room_summary = py.eval(this.props.record.data.room_summary);
+            this.state.summary_header = JSON.parse(this.props.record.data.summary_header);
+            this.state.room_summary = JSON.parse(this.props.record.data.room_summary);
 
         });
     }
@@ -47,4 +47,7 @@ export class MyWidget extends TextField {
 MyWidget.template = "RoomSummary";
 MyWidget.components = { ...TextField.components };
 MyWidget.additionalClasses = [...(TextField.additionalClasses || []), "o_field_text"];
-registry.category("fields").add("Room_Reservation", MyWidget);
+registry.category("fields").add("Room_Reservation", {
+    component: MyWidget,
+    supportedTypes: ["char", "text"],
+});

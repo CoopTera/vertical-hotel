@@ -50,6 +50,7 @@ class HotelRoom(models.Model):
     )
     product_manager = fields.Many2one("res.users")
 
+
     @api.model
     def create(self, vals):
         if "room_categ_id" in vals:
@@ -324,6 +325,7 @@ class HotelRoomAmenities(models.Model):
         ondelete="restrict",
     )
     product_manager = fields.Many2one("res.users")
+
 
     @api.model
     def create(self, vals):
